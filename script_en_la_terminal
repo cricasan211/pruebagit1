@@ -1,0 +1,144 @@
+user@osgeolive:/var/www/html/sig3/mapserver-sig3$  mkdir pruebagit
+user@osgeolive:/var/www/html/sig3/mapserver-sig3$ cd pruebagit/
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ ls
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ ls
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ cd..
+cd..: command not found
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ cd ..
+user@osgeolive:/var/www/html/sig3/mapserver-sig3$ ls
+ejemplo11.map*  ejemplo3.map*  ejemplo6.map*  geodata/    README.md*
+ejemplo1.map*   ejemplo4.map*  ejemplo8.map*  lib/        tmp/
+ejemplo2.map*   ejemplo5.map*  ejemplo9.map*  pruebagit/
+user@osgeolive:/var/www/html/sig3/mapserver-sig3$ cd pruebagit/
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git init
+error: chmod on /var/www/html/sig3/mapserver-sig3/pruebagit/.git/config.lock failed: Operation not permitted
+fatal: could not set 'core.filemode' to 'false'
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ sudo git init
+[sudo] password for user: 
+Reinitialized existing Git repository in /var/www/html/sig3/mapserver-sig3/pruebagit/.git/
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ touch taller2.txt
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ ls
+taller2.txt*
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	taller2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git add .
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   taller2.txt
+
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git commit -m "carpetauser@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git commit -m "carpeta prueba"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'user@osgeolive.(none)')
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git commit -m "carpeta prueba"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'user@osgeolive.(none)')
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git config --global user.email "cristhian.sanchez.arteaga@correounivalle.edu.co"
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git config --global user.name "cricasan211" 
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git commit -m "carpeta prueba"
+[master (root-commit) 3c9ee3f] carpeta prueba
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 taller2.txt
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git remote add origin https://github.com/cricasan211/pruebagit1.git
+error: chmod on /var/www/html/sig3/mapserver-sig3/pruebagit/.git/config.lock failed: Operation not permitted
+fatal: could not set 'remote.origin.url' to 'https://github.com/cricasan211/pruebagit1.git'
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ sudo git remote add origin https://github.com/cricasan211/pruebagit1.git
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git status
+On branch master
+nothing to commit, working tree clean
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git push -u origin master
+Username for 'https://github.com': cricasan211
+Password for 'https://cricasan211@github.com': 
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 235 bytes | 23.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/cricasan211/pruebagit1.git
+ * [new branch]      master -> master
+error: chmod on /var/www/html/sig3/mapserver-sig3/pruebagit/.git/config.lock failed: Operation not permitted
+error: chmod on /var/www/html/sig3/mapserver-sig3/pruebagit/.git/config.lock failed: Operation not permitted
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ sudo git push -u origin master
+Username for 'https://github.com': cricasan211
+Password for 'https://cricasan211@github.com': 
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Everything up-to-date
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$  ls
+TALLER2_MAPSERVER_SIG3.pdf*  taller2.txt*
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+	add
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ sudo git add  .
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ sudo git push https:////github.com/cricasan211/pruebagit1/
+fatal: unable to access 'https:////github.com/cricasan211/pruebagit1/': Bad URL
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ sudo git push https:////github.com/cricasan211/
+fatal: unable to access 'https:////github.com/cricasan211/': Bad URL
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ sudo git push https://github.com/cricasan211/pruebagit1/
+Username for 'https://github.com': cricasan211
+Password for 'https://cricasan211@github.com': 
+Everything up-to-date
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+	add
+
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ sudo git add .
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git commit -m "realizacion del taller 2"
+[master 7ca15fb] realizacion del taller 2
+ 3 files changed, 415 insertions(+)
+ create mode 100644 TALLER2_MAPSERVER_SIG3.pdf
+ create mode 100644 cristhian.map
+ create mode 100644 ejemplo11.map
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ sudo git push origin 
+Username for 'https://github.com': cricasan211
+Password for 'https://cricasan211@github.com': 
+Counting objects: 5, done.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.61 MiB | 574.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/cricasan211/pruebagit1.git
+   3c9ee3f..7ca15fb  master -> master
+user@osgeolive:/var/www/html/sig3/mapserver-sig3/pruebagit$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
