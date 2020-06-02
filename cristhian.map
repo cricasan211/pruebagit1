@@ -1,0 +1,203 @@
+#######################################################
+#	Version: 0.2
+#   Licence: GNU GPL
+#	Autor: Cristhian sanchez
+#  
+#######################################################
+
+MAP
+	NAME taller_2
+		SIZE 800 600
+		STATUS ON
+		#EXTENT [xmin] [ymin] [xmax] [ymax]
+		EXTENT 1053855.50 860198.93 1068480.77 879011.06
+		
+		SHAPEPATH "geodata/"
+		FONTSET "lib/fonts/fonts.txt"
+		SYMBOLSET "lib/symbols/symbols.sym"
+		
+		IMAGECOLOR 255 255 255
+		UNITS METERS
+
+	WEB
+		IMAGEPATH "/var/www/html/sig3/mapserver-sig3/tmp/"
+		IMAGEURL "tmp/"
+	END
+        #Leyenda embebida
+	LEGEND
+		STATUS EMBED
+		IMAGECOLOR 231 135 215
+		POSITION LL
+		KEYSIZE 20 12
+		KEYSPACING 5 5
+		LABEL
+			TYPE TRUETYPE
+			FONT "sans"
+			SIZE 10
+			COLOR 0 0 0
+		END
+		OUTLINECOLOR 51 51 51
+		#TRANSPARENT on
+	END
+	
+	SCALEBAR
+		STYLE 0
+		STATUS EMBED
+		SIZE 250 4
+		COLOR 0 0 0
+		UNITS METERS
+		INTERVALS 5
+		TRANSPARENT off
+		POSITION LR
+		BACKGROUNDCOLOR 255 255 255
+		IMAGECOLOR 255 255 255
+		OUTLINECOLOR 211 211 211
+		LABEL
+			COLOR 0 0 0
+			SIZE TINY
+		END 
+	END
+        LAYER
+		NAME "Norte"
+		TYPE POINT
+		STATUS ON
+		TRANSFORM OFF
+		POSTLABELCACHE TRUE
+		FEATURE
+			POINTS 
+				750 50
+			END
+		END
+		CLASS
+			SYMBOL 'rosavientos'
+			COLOR 0 0 0
+			OUTLINECOLOR 0 0 0
+			STYLE END
+		END
+	END
+
+	LAYER
+		CONNECTIONTYPE postgis
+		NAME "Poligonos"
+		STATUS ON
+		CONNECTION "user=user password=user dbname=sig3 host=localhost port=5432"
+		DATA "the_geom FROM barrios_cali as poligonos using unique gid using SRID=3115"
+		TYPE POLYGON
+		CLASS
+			STYLE
+				COLOR 190 190 192 
+				OUTLINECOLOR 0 0 0
+			END
+		END
+	END
+	LAYER
+		CONNECTIONTYPE postgis
+		NAME "Poligonos"
+		STATUS ON
+		CONNECTION "user=user password=user dbname=sig3 host=localhost port=5432"
+		DATA "geom FROM areas_protegidas as poligonos using unique gid using SRID=3115"
+		TYPE POLYGON
+		CLASS
+			STYLE
+				COLOR 45 189 60 
+				OUTLINECOLOR 0 0 0
+			END
+		END
+	END
+	LAYER
+		CONNECTIONTYPE postgis
+		NAME "Poligonos"
+		STATUS ON
+		CONNECTION "user=user password=user dbname=sig3 host=localhost port=5432"
+		DATA "geom FROM Zona_ambiental_rio_cauca as poligonos using unique gid using SRID=3115"
+		TYPE POLYGON
+		CLASS
+			STYLE
+				COLOR 186 45 189
+				OUTLINECOLOR 0 0 0
+			END
+		END
+	END
+       LAYER
+		CONNECTIONTYPE postgis
+		NAME "Lineas"
+		STATUS ON
+		CONNECTION "user=user password=user dbname=sig3 host=localhost port=5432"
+		DATA "the_geom FROM rutas_mio as lineas using unique gid using SRID=3115"
+		TYPE LINE
+		CLASS
+			STYLE
+				COLOR 255 0 0
+				OUTLINECOLOR 0 0 0
+			END
+		END
+	END
+        LAYER
+		CONNECTIONTYPE postgis
+		NAME "Lineas"
+		STATUS ON
+		CONNECTION "user=user password=user dbname=sig3 host=localhost port=5432"
+		DATA "geom FROM Rios as lineas using unique gid using SRID=3115"
+		TYPE LINE
+		CLASS
+			STYLE
+				COLOR 5 9 250
+				OUTLINECOLOR 0 0 0
+			END
+		END
+	END
+
+	
+	LAYER
+		CONNECTIONTYPE postgis
+		NAME "Puntos"
+		STATUS ON
+		CONNECTION "user=user password=user dbname=sig3 host=localhost port=5432"
+		DATA "the_geom FROM estaciones_mio as puntos using unique gid using SRID=3115"
+		TYPE POINT
+		CLASS
+			STYLE
+			    SYMBOL star
+				SIZE 20
+				COLOR 249 249 8
+				OUTLINECOLOR 250 255 0
+			END
+		END
+	END
+		LAYER
+		NAME "Grilla"
+		METADATA
+			"DESCRIPTION" "Grid"
+		END
+		TYPE LINE
+		STATUS ON
+		CLASS
+			NAME "Graticule"
+			COLOR 0 0 0
+			LABEL
+				COLOR 255 0 0
+				FONT sans
+				TYPE truetype
+				SIZE 12
+				POSITION AUTO
+				PARTIALS FALSE
+				BUFFER 2
+				OUTLINECOLOR 255 255 255
+			END
+		END
+		PROJECTION
+			"init=epsg:3115"
+		END
+		GRID
+			#LABELFORMAT DDMM
+			#MAXARCS 5
+			#MAXINTERVAL 5
+			#MAXSUBDIVIDE 2
+			
+			LABELFORMAT '%.0fm'
+			MININTERVAL 5000
+		  END
+	    END
+	
+
+END
